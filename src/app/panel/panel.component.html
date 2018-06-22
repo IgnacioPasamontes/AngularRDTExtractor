@@ -1,8 +1,21 @@
-<ul *ngIf="searchFormPanel[key]">
-        <li *ngFor="let value of searchFormPanel[key]">
+<div *ngIf="category; else regularPanel">
+    <ul *ngIf="CategorySearchFormPanel[category][key]">
+        <li *ngFor="let value of CategorySearchFormPanel[category][key]">
             <span>
-                <button class = "close" (click)="removeThis(key,value)">x</button>
+                <button class = "close" (click)="removeThis(key,value,category)">x</button>
                 &nbsp;{{ value }}
             </span> 
         </li>
-</ul>
+    </ul>
+</div>
+
+<ng-template #regularPanel>
+    <ul *ngIf="searchFormPanel[key]">
+        <li *ngFor="let value of searchFormPanel[key]">
+            <span>
+                <button class = "close" (click)="removeThis(key,value,category)">x</button>
+                &nbsp;{{ value }}
+            </span> 
+        </li>
+    </ul>
+</ng-template>

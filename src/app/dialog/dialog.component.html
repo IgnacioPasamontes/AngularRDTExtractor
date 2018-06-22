@@ -1,0 +1,79 @@
+<h4><b>Report number:</b> {{parentInfo['report_number'][0]}}</h4>
+<div class="container-fluid shadow p-4 bg-white rounded text-monospace " style="margin-top:30px">
+    <div class="row">
+        <div class="col-lg-5">
+            <h5>{{parentInfo['common_name'][0]}}</h5>
+            <div >
+                <canvas class="border border-primary" id="canvas" value="CC(=O)OC1=CC=CC=C1C(=O)O"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <br>
+            <div class="row">
+                    <span class="font-weight-bold bg-light">Source (company):  </span>
+                    <span> {{parentInfo['source_company'][0]}}</span>
+            </div>
+            <div class="row align-items-center">
+                    <span class="font-weight-bold bg-light">Specie: </span>
+                    <span>{{parentInfo['normalised_species'][0]}}</span>
+            </div>
+            <div class="row align-items-center">
+                    <span  class="font-weight-bold bg-light">Strain: </span>
+                    <span>{{parentInfo['normalised_strain'][0]}}</span>
+            </div>   
+            <div class="row align-items-center">
+                    <span class="font-weight-bold bg-light">Sex: </span>
+                    <span>{{parentInfo['normalised_sex'][0]}}</span>
+            </div>
+            <div class="row">
+                    <span class="font-weight-bold bg-light">Age:  </span>
+                    <span>{{parentInfo['age_of_start_of_treatment'][0]}}  {{parentInfo['age_unit'][0]}}</span>
+            </div>
+            <div class="row ">
+                    <span class="font-weight-bold bg-light">Administration route: </span>
+                    <span>{{parentInfo['normalised_administration_route'][0]}}</span>
+            </div>
+            <div class="row">
+                    <span class="font-weight-bold bg-light">Vehicle: </span>
+                    <span>{{parentInfo['vehicle'][0]}}</span>
+            </div>
+            <div class="row">
+                    <span class="font-weight-bold bg-light">Year of Study: </span>
+                    <span>{{parentInfo['year_of_study'][0]}}</span>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-12 pl-5"> 
+                <div class="row">
+                        <span class="font-weight-bold bg-light">Dosage:</span>
+                        <ul>
+                            <li *ngFor="let dose of parentInfo['dosage'][0].split(';')">
+                                    <span>{{dose}}</span>
+                            </li>   
+                        </ul>                  
+                </div>
+                
+                <div class="row">
+                        <span class="font-weight-bold bg-light">Exposure Period (days): </span>
+                        <span>{{parentInfo['exposure_period_days'][0]}}</span>
+                </div>
+                <div class="row">
+                        <span class="font-weight-bold bg-light">Recovery period (days):   </span>
+                        <span>{{parentInfo['recovery_period_days'][0]}}</span>
+                </div>  
+                <div class="row">
+                        <span class="font-weight-bold bg-light">Quality assesment:  </span>
+                        <span>{{parentInfo['study_quality_assesment'][0]}}</span>
+                </div>
+                <div class="row">
+                        <span class="font-weight-bold bg-light">Record status:</span>
+                        <span>{{parentInfo['record_status'][0]}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      
+          

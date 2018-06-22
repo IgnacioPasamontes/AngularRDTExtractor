@@ -1,5 +1,10 @@
-<h3>Connect</h3>
-<p>Connect module.</p>
+<br>
+<div class="row">
+    <div class="col-lg-11 offset-lg-1">
+        <h3>Connect to the database:</h3>
+    </div>
+</div>
+<br>
 <div class="row">
     <div class="col-lg-4 offset-md-1">
         <div class="row">
@@ -7,7 +12,7 @@
                 <label for="usr">Host:</label>
             </div>
             <div class="form-inline col-lg-8">
-                <input type="text" class="form-control" id="host" placeholder="Host">
+                <input type="text" class="form-control" [(ngModel)]="host" placeholder="Host">
             </div>
         </div>
         <div class="row">
@@ -15,7 +20,7 @@
                 <label for="usr">Port:</label>
             </div>
             <div class="form-inline col-lg-8">
-                <input type="text" class="form-control" id="port" placeholder="Port">
+                <input type="text" class="form-control" [(ngModel)]="port" value="1521">
             </div>
         </div>
         <div class="row">
@@ -23,7 +28,7 @@
                 <label for="usr">SID:</label>
             </div>
             <div class="form-inline col-lg-8">
-                <input type="text" class="form-control" id="sid" placeholder="SID">
+                <input type="text" class="form-control" [(ngModel)]="sid" placeholder="SID">
             </div>
         </div>
         <div class="row">
@@ -31,7 +36,7 @@
                 <label for="usr">User:</label>
             </div>
             <div class="form-inline col-lg-8">
-                <input type="text" class="form-control" id="user" placeholder="User">
+                <input type="text" class="form-control" [(ngModel)]="user" placeholder="User">
             </div>
         </div>
         <div class="row">
@@ -39,19 +44,18 @@
                 <label for="usr">Password:</label>
             </div>
             <div class="form-inline col-lg-8">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
             </div>
         </div>
-
     </div>
 </div>
 <div class="row mt-4">
        
     <div class="col-lg-2 offset-md-1">
-        <button type="button" class="btn" style="margin-left: 20px" id="check_connection" onclick="CheckConnection()"> Check Connection </button>
+        <button type="button" class="btn" style="margin-left: 20px" id="check_connection" (click)="checkConnection()"> Connect </button>
     </div>
     <div class="form-inline col-lg-2" id="info_database">
-        No connected
+        {{ connectionStatus }}
     </div>
 </div>
     
